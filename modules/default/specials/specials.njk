@@ -1,0 +1,43 @@
+<!--
+	Use ` | safe` to allow html tages within the text string.
+	https://mozilla.github.io/nunjucks/templating.html#autoescaping
+-->
+<!--<div>{{text | safe}}</div>-->
+<!--<table class="specials-tbl">
+	<tr>
+		<th>Name</th>
+		<th>Monday</th>
+		<th>Tuesday</th>
+		<th>Wednesday</th>
+		<th>Thursday</th>
+		<th>Friday</th>
+	</tr>
+	<tr>
+		<th class="specials-name specials-bridget">Bridget</th>
+		<th>{{sched.bridget.m | safe}}</th>
+		<th>{{sched.bridget.t | safe}}</th>
+		<th>{{sched.bridget.w | safe}}</th>
+		<th>{{sched.bridget.th | safe}}</th>
+		<th>{{sched.bridget.f | safe}}</th>
+	</tr>
+	<tr>
+		<th class="specials-name specials-bridget">Calvin</th>
+		<th>{{sched.calvin.m | safe}}</th>
+		<th>{{sched.calvin.t | safe}}</th>
+		<th>{{sched.calvin.w | safe}}</th>
+		<th>{{sched.calvin.th | safe}}</th>
+		<th>{{sched.calvin.f | safe}}</th>		
+	</tr>
+</table>
+-->
+<table class="specials-tbl">
+	<tr class='special-bridget'>
+		<td class='special-bridget-title'>Bridget</th>
+		<td>Special: {{specials.monday.bridget}}</br> ICON</th>
+	</tr>
+	<tr class='special-calvin'>
+		<td class='special-calvin-title'>Calvin</th>
+		<td>Special: Name</br> ICON</th>
+	</tr>
+
+</table>

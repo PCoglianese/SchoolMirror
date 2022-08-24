@@ -1,0 +1,22 @@
+<!--
+	Use ` | safe` to allow html tages within the text string.
+	https://mozilla.github.io/nunjucks/templating.html#autoescaping
+-->
+<!--<div>{{text | safe}}</div>-->
+<table class="menu-tbl">
+	<tr>
+		<th class='menu-today-title'>Today: {{todaysmenu.start_date}}</th>
+		<th>Tomorrow</th>
+	</tr>
+	<tr>
+		<th class="menu-today">
+			List of Today's options
+		</th>
+		<th>
+			List of Tomorrow's options
+		</th>
+
+	</tr>
+
+</table>
+
