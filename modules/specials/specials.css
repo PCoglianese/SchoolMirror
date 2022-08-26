@@ -1,0 +1,15 @@
+.specials-tbl{
+	width:100%;
+	text-align:center;
+	vertical-align:top;
+}
+.specials-name{
+	font-size:24px;
+	font-weight:bold;
+}
+.specials-tbl th{
+	font-size:50px;
+}
+.specials i{
+	font-size:110px;
+}
