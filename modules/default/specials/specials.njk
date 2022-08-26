@@ -1,0 +1,20 @@
+<!--
+	Use ` | safe` to allow html tages within the text string.
+	https://mozilla.github.io/nunjucks/templating.html#autoescaping
+-->
+{% if current %}
+	<table class="specials-tbl">
+		<tr>
+			<th>Bridget</th>
+			<th>Calvin</th>
+		</tr>
+		<tr class='specials'>
+			<td><i class="fa-solid fa-{{current.bridget.icon}}"></i><br />{{current.bridget.name}}</td>
+			<td><i class="fa-solid fa-{{current.calvin.icon}}"></i><br />{{current.calvin.name}}</td>
+		</tr>
+	</table>
+{% else %}
+    <div class="dimmed light small">
+       <div class="specials-weekend">NO SPECIALS TODAY</div>
+    </div>
+{% endif %}	
