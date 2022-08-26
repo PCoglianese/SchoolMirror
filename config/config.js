@@ -120,6 +120,8 @@ let config = {
 			position: "top_center",
 			header: "Bridget & Calvin Specials",
 			config: {
+				mockDay: false,
+				mockDateValue: "2022/09/04",				
 				schedURL:"https://raw.githubusercontent.com/PCoglianese/MagicMirrorConfigs/main/specialsconfig.js"
 				}		
 		},
@@ -129,6 +131,8 @@ let config = {
 			header: "Lunch Menu",
 			config: {
 				useCorsProxy:true,
+				mockDate:false,
+				mockDateValue: "2022/09/01",
 				menuURL :"https://westboroughk12.nutrislice.com/menu/api/weeks/school/hastings/menu-type/k-3-full-in-house-lunch/"
 			}			
 		},
