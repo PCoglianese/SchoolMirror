@@ -118,8 +118,8 @@ let config = {
 		{
 			module: "specials",
 			position: "top_center",
-			header: "Bridget & Calvin Specials",
 			config: {
+				updateInterval: 2.88e+7,
 				mockDay: false,
 				mockDateValue: "2022/09/04",				
 				schedURL:"https://raw.githubusercontent.com/PCoglianese/MagicMirrorConfigs/main/specialsconfig.js"
@@ -128,8 +128,8 @@ let config = {
 		{
 			module: "menu",
 			position: "top_center",
-			header: "Lunch Menu",
 			config: {
+				updateInterval: 2.88e+7,
 				useCorsProxy:true,
 				mockDate:false,
 				mockDateValue: "2022/09/01",

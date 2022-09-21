@@ -69,7 +69,7 @@ Module.register("menu", {
 			nextLoad = delay;
 		}
 		setTimeout(() => {
-			this.fetchCurrentSchedule();
+			this.fetchCurrentMenu();
 			console.log("Would be getting new schedule data")
 		}, nextLoad);
 	},		

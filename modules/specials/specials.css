@@ -13,3 +13,7 @@
 .specials i{
 	font-size:110px;
 }
+th.specials_header{
+	font-size:35px;
+	text-decoration:underline;
+}

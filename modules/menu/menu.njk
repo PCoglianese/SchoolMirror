@@ -11,11 +11,13 @@
 	<tr>
 		<td class="menu-list">
 		{% for m in current.data.splice(1) %}
-			<div class="menu-item">
-				<i class="fa-solid fa-bowl-food"></i><b> {{m.food.name}}</b>
-				<br />
-				{{m.food.description}}
-			</div>
+			{% if m.food.food_category == "entree" %}
+				<div class="menu-item">
+					<i class="fa-solid fa-bowl-food"></i><b> {{m.food.name}}</b>
+					<br />
+					{{m.food.description}}
+				</div>
+			{% endif %}
 		{% endfor %}
 		</td>	
 	</tr>

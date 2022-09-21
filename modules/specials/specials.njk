@@ -5,6 +5,9 @@
 {% if current %}
 	<table class="specials-tbl">
 		<tr>
+			<th class="specials_header" colspan="2">Specials {{current.dayFrame}}</th>
+		</tr>
+		<tr>
 			<th>Bridget</th>
 			<th>Calvin</th>
 		</tr>
@@ -15,6 +18,6 @@
 	</table>
 {% else %}
     <div class="dimmed light small">
-       <div class="specials-weekend">NO SPECIALS TODAY</div>
+       <div class="specials-weekend">NO SPECIALS {{current.dayFrame}}</div>
     </div>
 {% endif %}	
