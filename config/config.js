@@ -119,7 +119,7 @@ let config = {
 			module: "specials",
 			position: "top_center",
 			config: {
-				updateInterval: 2.88e+7,
+				updateInterval: 1.44e+7,
 				mockDay: false,
 				mockDateValue: "2022/09/04",				
 				schedURL:"https://raw.githubusercontent.com/PCoglianese/MagicMirrorConfigs/main/specialsconfig.js"
@@ -129,13 +129,17 @@ let config = {
 			module: "menu",
 			position: "top_center",
 			config: {
-				updateInterval: 2.88e+7,
+				updateInterval: 1.44e+7,
 				useCorsProxy:true,
 				mockDate:false,
 				mockDateValue: "2022/09/01",
 				menuURL :"https://westboroughk12.nutrislice.com/menu/api/weeks/school/hastings/menu-type/k-3-full-in-house-lunch/"
 			}			
 		},
+		{
+			module: "screenshift",
+			position: "bottom_center"		
+		},		
 	]
 };
 

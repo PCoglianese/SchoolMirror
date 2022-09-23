@@ -1,0 +1,11 @@
+
+.module.screenshift{
+    display:none;
+}
+body{
+    top:0px;
+    transition:20s;
+}
+body.shift_on{
+    top:50px;
+}

@@ -65,12 +65,12 @@ Module.register("specials", {
 		}, nextLoad);
 	},	
 	getToday: function(schedData){
-		var todaysSchedule;
+		var todaysSchedule = new Object;
 		var theDay = new Date();
 		var curDay = theDay.getHours() > 12 ? 1 : 0;
 
 		const today = this.config.mockDay ? moment(this.config.mockDateValue, ["YYYY-MM-DD"]).format("dddd") : moment().add(curDay,'days').format('dddd');
-		console.log("ITS OBVIOUSLY: "+today);
+		todaysSchedule.dayFrame = curDay ? "Tomorrow" : "Today";
 		switch(today){
 			case "Monday":
 				todaysSchedule = schedData.specials.Monday;
@@ -91,8 +91,8 @@ Module.register("specials", {
 				todaysSchedule = null
 				break;
 		}
-		todaysSchedule.dayFrame = curDay ? "Tomorrow" : "Today";
-		return todaysSchedule
+
+		return todaysSchedule;
 	},
 	/*
 	notificationReceived: function (notification, payload, sender) {
