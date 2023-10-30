@@ -115,6 +115,19 @@ let config = {
 				lon: "-71.6132"
 			}
 		},
+		/*
+		{
+			module: "teamsnap",
+			position: "top_center",
+			config: {
+				updateInterval: 1.44e+7,
+				useCorsProxy:true,
+				mockDate:false,
+				mockDateValue: "2022/09/01",
+				menuURL :"https://westboroughk12.api.nutrislice.com/menu/api/weeks/school/hastings/menu-type/k-3-full-in-house-lunch/"
+			}			
+		},		
+		*/
 		{
 			module: "specials",
 			position: "top_center",
@@ -133,13 +146,21 @@ let config = {
 				useCorsProxy:true,
 				mockDate:false,
 				mockDateValue: "2022/09/01",
-				menuURL :"https://westboroughk12.nutrislice.com/menu/api/weeks/school/hastings/menu-type/k-3-full-in-house-lunch/"
+				menuURL :"https://westboroughk12.api.nutrislice.com/menu/api/weeks/school/hastings/menu-type/k-3-full-in-house-lunch/"
 			}			
 		},
 		{
 			module: "screenshift",
 			position: "bottom_center"		
 		},		
+		{
+			module: "seedlings",
+			position: "right_bottom",
+			header: "Seedlings",
+			config: {
+
+			}
+		},
 	]
 };
 

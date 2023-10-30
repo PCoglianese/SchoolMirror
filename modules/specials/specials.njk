@@ -2,7 +2,11 @@
 	Use ` | safe` to allow html tages within the text string.
 	https://mozilla.github.io/nunjucks/templating.html#autoescaping
 -->
-{% if current %}
+{% if current.specials == false %}
+    <div class="dimmed light small">
+       <div class="specials-weekend">NO SPECIALS {{current.dayFrame}}</div>
+    </div>
+{% else %}
 	<table class="specials-tbl">
 		<tr>
 			<th class="specials_header" colspan="2">Specials {{current.dayFrame}}</th>
@@ -16,8 +20,4 @@
 			<td><i class="fa-solid fa-{{current.calvin.icon}}"></i><br />{{current.calvin.name}}</td>
 		</tr>
 	</table>
-{% else %}
-    <div class="dimmed light small">
-       <div class="specials-weekend">NO SPECIALS {{current.dayFrame}}</div>
-    </div>
-{% endif %}	
+{% endif %}
