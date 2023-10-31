@@ -23,7 +23,8 @@ Module.register("seedlings", {
     },
     newCapture:function(){
         const seedling_capture = document.getElementById("seedling_capture");
-		seedling_capture.src = "http://10.0.0.17/capture";
+		var theDay = new Date();
+		seedling_capture.src = "http://10.0.0.17/capture?ts="+theDay;
         this.startCycle();
     }
 });
