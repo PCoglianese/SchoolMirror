@@ -1,0 +1,54 @@
+.summer-tbl{
+	width:130% !important;
+	text-align:left;
+	vertical-align:top;
+}
+.summer-week {
+    /* border-top: 1px solid white; */
+    padding-bottom: 25px;
+	width: 100%;
+}
+.summer-week_dates {
+    border-bottom: 1px solid white;
+}
+.summer-activity {
+    padding: 15px 0px 0px 0px;
+	display:flex;
+	flex-wrap:wrap;
+}
+th.summer_header{
+	font-size:55px;
+	text-align:center;
+}
+.summer-week.summer_past {
+    display: none;
+}
+.summer-week.summer_past {
+    font-size:1.1em;
+}
+.summer-week.summer_future{
+	font-size:.8em;
+}
+.summer-who {
+    font-weight: bold;
+    font-size: 1em;
+    width: 14%;
+}
+.summer-what {
+    padding-left: 15px;
+    width: 83%;
+    font-size: 1em;
+}
+.summer-when {
+    /* padding-left: 15px; */
+    padding-left: 16%;
+	width: 42%;
+}
+.summer-at {
+    padding-left: 10px;
+    font-weight: bold;
+}
+.summer-where {
+	width:42%;
+	text-align:right;
+}

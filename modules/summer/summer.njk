@@ -1,0 +1,31 @@
+<!--
+	Use ` | safe` to allow html tages within the text string.
+	https://mozilla.github.io/nunjucks/templating.html#autoescaping
+-->
+<table class="summer-tbl">
+	<tr>
+		<th class="summer_header" colspan="2">SUMMER!</th>
+	</tr>
+	<tr><td>
+		{% for week in current %}
+			<div class="summer-week {{ week.active }}">
+				<div class="summer-week_dates"><b>Week Of: </b>{{week.starts}} - {{week.ends}}</div>
+				{% if week.activities.length > 0 %}
+					{% for activity in week.activities %}
+						<div class="summer-activity">
+							<div class="summer-who">{{activity.who}}</div>
+							<div class="summer-what">{{activity.what}}</div>
+							<div class="summer-when"><b>When: </b>{{activity.when}}</div>
+							<!--<div class="summer-at"> At: </div>-->
+							<div class="summer-where"><b>Where: </b>{{activity.where}}</div>
+						</div>
+					{% endfor %}
+				{% else %}
+					{% for activity in week.activities %}
+						<div class="summer-free">No Activities Planned!</div>
+					{% endfor %}
+				{% endif %}	
+			</div>
+		{% endfor %}
+	</td></tr>
+</table>
