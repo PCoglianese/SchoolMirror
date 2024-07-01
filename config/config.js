@@ -128,6 +128,7 @@ let config = {
 			}			
 		},		
 		*/
+		/*
 		{
 			module: "specials",
 			position: "top_center",
@@ -149,10 +150,21 @@ let config = {
 				menuURL :"https://westboroughk12.api.nutrislice.com/menu/api/weeks/school/hastings/menu-type/k-3-full-in-house-lunch/"
 			}			
 		},
+		*/
+		{
+			module: "summer",
+			position: "top_center",
+			config: {
+				updateInterval: 1.44e+7,
+				mock: false,			
+				summerURL:"https://raw.githubusercontent.com/PCoglianese/MagicMirrorConfigs/main/summer24.js"
+			}		
+		},
 		{
 			module: "screenshift",
 			position: "bottom_center"		
 		},		
+		/*
 		{
 			module: "seedlings",
 			position: "right_bottom",
@@ -161,6 +173,7 @@ let config = {
 
 			}
 		},
+		*/
 	]
 };
 
