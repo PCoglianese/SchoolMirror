@@ -128,7 +128,6 @@ let config = {
 			}			
 		},		
 		*/
-		/*
 		{
 			module: "specials",
 			position: "top_center",
@@ -147,10 +146,10 @@ let config = {
 				useCorsProxy:true,
 				mockDate:false,
 				mockDateValue: "2022/09/01",
-				menuURL :"https://westboroughk12.api.nutrislice.com/menu/api/weeks/school/hastings/menu-type/k-3-full-in-house-lunch/"
+				menuURL :"https://westboroughk12.api.nutrislice.com/menu/api/weeks/school/hastings/menu-type/lunch/"
 			}			
 		},
-		*/
+		/*
 		{
 			module: "summer",
 			position: "top_center",
@@ -160,6 +159,7 @@ let config = {
 				summerURL:"https://raw.githubusercontent.com/PCoglianese/MagicMirrorConfigs/main/summer24.js"
 			}		
 		},
+		*/
 		{
 			module: "screenshift",
 			position: "bottom_center"		
