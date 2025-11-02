@@ -128,6 +128,7 @@ let config = {
 			}			
 		},		
 		*/
+		/*
 		{
 			module: "specials",
 			position: "top_center",
@@ -149,7 +150,7 @@ let config = {
 				menuURL :"https://westboroughk12.api.nutrislice.com/menu/api/weeks/school/hastings/menu-type/lunch/"
 			}			
 		},
-		/*
+		
 		{
 			module: "summer",
 			position: "top_center",
