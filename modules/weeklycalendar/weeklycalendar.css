@@ -1,0 +1,141 @@
+.weeklycalendar {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw; /* span full viewport width */
+  height: 75vh; /* occupy lower two-thirds of the screen */
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 6px 0;
+  background: #000;
+  color: #fff;
+}
+
+.weeklycalendar .weeks {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  height: 100%;
+}
+
+.weeklycalendar .week {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr); /* equal-width columns for each day */
+  gap: 0; /* use borders for dividers */
+  align-items: stretch;
+  width: 100%;
+  box-sizing: border-box;
+  height: calc((100% - 8px) / 2); /* each week gets half of module height (accounting for gap) */
+}
+
+.weeklycalendar .weekLabel {
+  grid-column: 1 / -1;
+  text-align: left;
+height:0px;
+  font-size: 2rem;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  color: #fff;
+}
+
+.weeklycalendar .day {
+  background: transparent;
+  padding: 8px 12px;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 100%;
+  border-left: 1px solid #fff; /* white divider between days */
+}
+
+.weeklycalendar .day.spacer {
+  background: transparent;
+  border-left: none;
+}
+
+/* Remove left border on first column (per week) */
+.weeklycalendar .week .day:first-child {
+  border-left: none;
+}
+
+/* Ensure day header doesn't take flexible space; events area fills remaining height */
+.weeklycalendar .dayHeader {
+  flex: 0 0 auto;
+}
+
+.weeklycalendar .events {
+  flex: 1 1 auto;
+  overflow: auto;
+}
+
+/* Event block: time on top, title below, with white divider under each event */
+.weeklycalendar .event {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 6px;
+  margin-bottom: 6px;
+}
+
+.weeklycalendar .event:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.weeklycalendar .eventTime {
+  font-size: 0.85rem;
+  color: #fff;
+}
+
+.weeklycalendar .eventTitle {
+  font-size: 0.95rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+.weeklycalendar .dayHeader {
+  font-size: 1rem;
+  margin-bottom: 6px;
+  color: #fff;
+  font-weight:bold;
+}
+
+.weeklycalendar .events {
+  overflow: auto;
+}
+
+.weeklycalendar .event {
+  background: transparent;
+  margin-bottom: 6px;
+  border-radius: 3px;
+  display: flex;
+  align-items: baseline;
+  color: #fff;
+}
+
+.weeklycalendar .eventTime {
+  font-size: 0.8rem;
+  color: #ddd;
+  min-width: 64px;
+}
+
+.weeklycalendar .eventTitle {
+  font-size: 0.9rem;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.weeklycalendar .today {
+  outline: 2px solid rgb(255, 255, 255);
+}
+
+.weeklycalendar .empty {
+  color: rgba(255,255,255);
+}

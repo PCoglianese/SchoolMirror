@@ -1,0 +1,52 @@
+.horizontalweather {
+  width: 100%;
+  color: #fff;
+}
+
+.horizontalweather .weatherRow {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.horizontalweather .weatherCard {
+  min-width: 88px;
+  padding: 4px 6px;
+  text-align: center;
+  border-left: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.horizontalweather .weatherCard:first-child {
+  border-left: none;
+}
+
+.horizontalweather .todayCard {
+  min-width: 108px;
+}
+
+.horizontalweather .weatherLabel {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.horizontalweather .weatherIcon {
+  font-size: 1.5rem;
+  line-height: 1.6rem;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.horizontalweather .weatherTemp {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.1rem;
+}
+
+.horizontalweather .weatherDetail {
+  font-size: 0.75rem;
+  color: #ddd;
+  line-height: 1rem;
+}

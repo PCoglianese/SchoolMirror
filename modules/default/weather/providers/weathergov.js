@@ -147,28 +147,39 @@ WeatherProvider.register("weathergov", {
 	generateWeatherObjectFromCurrentWeather(currentWeatherData) {
 		const currentWeather = new WeatherObject(this.config.units, this.config.tempUnits, this.config.windUnits, this.config.useKmh);
 
+		const safeFieldValue = (field) => (field && typeof field.value !== "undefined" ? field.value : null);
+		const tempValue = safeFieldValue(currentWeatherData.temperature);
+		const windSpeedValue = safeFieldValue(currentWeatherData.windSpeed);
+		const windDirectionValue = safeFieldValue(currentWeatherData.windDirection);
+		const minTempValue = safeFieldValue(currentWeatherData.minTemperatureLast24Hours);
+		const maxTempValue = safeFieldValue(currentWeatherData.maxTemperatureLast24Hours);
+		const humidityValue = safeFieldValue(currentWeatherData.relativeHumidity);
+		const precipitationValue = safeFieldValue(currentWeatherData.precipitationLastHour);
+		const heatIndexValue = safeFieldValue(currentWeatherData.heatIndex);
+		const windChillValue = safeFieldValue(currentWeatherData.windChill);
+
 		currentWeather.date = moment(currentWeatherData.timestamp);
-		currentWeather.temperature = this.convertTemp(currentWeatherData.temperature.value);
-		currentWeather.windSpeed = this.convertSpeed(currentWeatherData.windSpeed.value);
-		currentWeather.windDirection = currentWeatherData.windDirection.value;
-		currentWeather.minTemperature = this.convertTemp(currentWeatherData.minTemperatureLast24Hours.value);
-		currentWeather.maxTemperature = this.convertTemp(currentWeatherData.maxTemperatureLast24Hours.value);
-		currentWeather.humidity = Math.round(currentWeatherData.relativeHumidity.value);
+		currentWeather.temperature = tempValue !== null ? this.convertTemp(tempValue) : null;
+		currentWeather.windSpeed = windSpeedValue !== null ? this.convertSpeed(windSpeedValue) : null;
+		currentWeather.windDirection = windDirectionValue;
+		currentWeather.minTemperature = minTempValue !== null ? this.convertTemp(minTempValue) : currentWeather.temperature;
+		currentWeather.maxTemperature = maxTempValue !== null ? this.convertTemp(maxTempValue) : currentWeather.temperature;
+		currentWeather.humidity = humidityValue !== null ? Math.round(humidityValue) : null;
 		currentWeather.rain = null;
 		currentWeather.snow = null;
-		currentWeather.precipitation = this.convertLength(currentWeatherData.precipitationLastHour.value);
-		if (currentWeatherData.heatIndex.value !== null) {
-			currentWeather.feelsLikeTemp = this.convertTemp(currentWeatherData.heatIndex.value);
-		} else if (currentWeatherData.windChill.value !== null) {
-			currentWeather.feelsLikeTemp = this.convertTemp(currentWeatherData.windChill.value);
+		currentWeather.precipitation = precipitationValue !== null ? this.convertLength(precipitationValue) : null;
+		if (heatIndexValue !== null) {
+			currentWeather.feelsLikeTemp = this.convertTemp(heatIndexValue);
+		} else if (windChillValue !== null) {
+			currentWeather.feelsLikeTemp = this.convertTemp(windChillValue);
 		} else {
-			currentWeather.feelsLikeTemp = this.convertTemp(currentWeatherData.temperature.value);
+			currentWeather.feelsLikeTemp = currentWeather.temperature;
 		}
 		// determine the sunrise/sunset times - not supplied in weather.gov data
 		currentWeather.updateSunTime(this.config.lat, this.config.lon);
 
 		// update weatherType
-		currentWeather.weatherType = this.convertWeatherType(currentWeatherData.textDescription, currentWeather.isDayTime());
+		currentWeather.weatherType = this.convertWeatherType(currentWeatherData.textDescription || "", currentWeather.isDayTime());
 
 		return currentWeather;
 	},

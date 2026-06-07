@@ -48,6 +48,21 @@ let config = {
 
 		},
 		{
+			module: "horizontalweather",
+			position: "top_right",
+			config: {
+				weatherProvider: "weathergov",
+				units: "imperial",
+				tempUnits: "imperial",
+				windUnits: "imperial",
+				updateInterval: 10 * 60 * 1000,
+				maxDays: 5,
+				lat: "42.26989",
+				lon: "-71.6132"
+			}
+		},
+		/*
+		{
 			module: "calendar",
 			header: "Calendar",
 			position: "top_left",
@@ -83,6 +98,23 @@ let config = {
 			]
 			}
 		},
+		*/
+
+		{
+			module: "weeklycalendar",
+			position: "bottom_center",
+			config: {
+				calendars: [
+					{
+						url: "https://calendar.google.com/calendar/ical/nseehatm1aig4si6pva0j5rvc4%40group.calendar.google.com/private-4c423afe963ed75de682f555eb8c6bcb/basic.ics",
+						name: "Family",
+						color: "#4caf50"
+					}
+				],
+				showWeekends: true
+			}
+		},
+		/*
 		{
 			module: "weather",
 			position: "top_right",
@@ -115,6 +147,7 @@ let config = {
 				lon: "-71.6132"
 			}
 		},
+		*/
 		/*
 		{
 			module: "teamsnap",
